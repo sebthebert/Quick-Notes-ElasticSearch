@@ -10,7 +10,9 @@ GET _cat/health?v
 GET _cat/nodes?v
 
 GET _cat/indices?v
+```
 
+```
 # create index sales
 PUT /sales
 
@@ -27,3 +29,12 @@ GET /sales/order/123
 # delete 'sales' index 
 DELETE /sales
 ```
+
+## Load data
+
+```shell
+curl -s -H "Content-Type: application/x-ndjson" -X POST localhost:9200/_bulk --data-binary "@filename"
+
+POST _bulk
+```
+x-ndjson => newline delimited json
